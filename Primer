@@ -1,0 +1,88 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // ===== 1 СЕКЦИЯ — if (проверка имени) =====
+        Console.WriteLine("Tere! Write your username:");
+
+        string userName = Console.ReadLine();
+
+        if (userName != "123")
+        {
+            Console.WriteLine("Bad name, go away 😡");
+            return; // завершает программу
+        }
+
+        Console.WriteLine("Tere " + userName);
+
+
+        // ===== 2 СЕКЦИЯ — if / else (вопрос да/нет) =====
+        Console.WriteLine("Kas sulle meeldivad mangud? (jah / ei)");
+        string answer = Console.ReadLine();
+
+        if (answer == "jah")
+        {
+            Console.WriteLine("Mulle kaaaa 😄");
+        }
+        else
+        {
+            Console.WriteLine("Kahju 😢");
+        }
+
+
+        // ===== 3 СЕКЦИЯ — if / else if (числа и диапазоны) =====
+        Console.WriteLine("How many hours did you play games this week?");
+        double hours = double.Parse(Console.ReadLine());
+
+        if (hours == 0)
+        {
+            Console.WriteLine("No time to play huh :/");
+        }
+        else if (hours > 0 && hours < 10)
+        {
+            Console.WriteLine("Ok, not bad");
+        }
+        else if (hours >= 10 && hours < 20)
+        {
+            Console.WriteLine("Cool B)");
+        }
+        else if (hours >= 20 && hours < 40)
+        {
+            Console.WriteLine("Too much 😬");
+        }
+        else
+        {
+            Console.WriteLine("Get a job 💀");
+        }
+
+
+        // ===== 4 СЕКЦИЯ — switch =====
+        Console.WriteLine("Choose an option:");
+        Console.WriteLine("1 - Say hello");
+        Console.WriteLine("2 - Show message");
+        Console.WriteLine("3 - Exit");
+
+        int option = int.Parse(Console.ReadLine());
+
+        switch (option)
+        {
+            case 1:
+                Console.WriteLine("Whats up!");
+                break;
+
+            case 2:
+                Console.WriteLine("HELLO TEACHER PLEASE GIVE ME 3 😭");
+                break;
+
+            case 3:
+                Console.WriteLine("Bye!");
+                break;
+
+            default:
+                Console.WriteLine("Unknown option");
+                break;
+        }
+    }
+}
