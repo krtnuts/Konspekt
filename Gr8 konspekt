@@ -1,0 +1,2090 @@
+using System.Diagnostics.SymbolStore;
+using System.Runtime.Serialization;
+
+namespace MinuKonspekt
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ////Console.WriteLine("Hello, World!");
+
+            ////Переменные, математические операции, IF, ELSE IF и ELSE:
+
+            ////1. определить содержимое при сравнении с пустой строкой, тип данных string
+            //Console.WriteLine("Привет пользователь, как тебя зовут");
+            //string nimi = Console.ReadLine();
+
+            //if (nimi == "")
+            //{
+            //    Console.WriteLine("Пользователь не ввёл своё имя");
+            //}
+            //else if (nimi != "")
+            //{
+            //    Console.WriteLine("Привет " + nimi + "!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Пользователь не ввёл своё имя");
+            //}
+
+            ////2. определить диапазон числа, сравнивая с граничными значениями, тип данных int/double/float
+            //Console.WriteLine(nimi + ", сколько тебе лет?: ");
+            //int kasutajavanus = int.Parse(Console.ReadLine());
+
+            ////2.1 несколько условий с помощью вложенных if
+            ////if (kasutajavanus > 0)
+            ////{
+            ////    if (kasutajavanus < 18)
+            ////    {
+            ////        Console.WriteLine("К сожалению, энергетик тебе не продадут, ты остался без Monster 😔");
+            ////    }
+            ////    else
+            ////    {
+            ////        Console.WriteLine("Ты можешь купить Monster, УРА ✨✨");
+            ////    }
+            ////}
+
+            ////2.2 несколько условий в одном if, используя логическую операцию \"and\", избегая вложенности
+            //if (kasutajavanus > 0 && kasutajavanus < 18)
+            //{
+            //    Console.WriteLine("К сожалению, энергетик тебе не продадут, ты остался без Monster 😔");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Ты можешь купить Monster, УРА ✨✨");
+            //}
+
+            ////2.3 несколько диапазонов, используя if-elseif, double/float
+            //Console.WriteLine("Введи также свой рост, пожалуйста, " + nimi + ":");
+            //double pikkus = double.Parse(Console.ReadLine());
+            //if (pikkus < 1.00d)
+            //{
+            //    Console.WriteLine("Ты совсем малявка");
+            //}
+            //else if (pikkus < 1.25d && pikkus > 1.00d)
+            //{
+            //    Console.WriteLine("Ты почти не метровый человечек");
+            //}
+            //else if (pikkus < 1.50d && pikkus > 1.25d)
+            //{
+            //    Console.WriteLine("Ой-ой, ты уже не гном, " + nimi + "!");
+            //}
+            //else if (pikkus < 1.75d && pikkus > 1.5d)
+            //{
+            //    Console.WriteLine("В целом стандартный рост, если не считать что чуть ниже среднего");
+            //}
+            //else if (pikkus < 2.00d && pikkus > 1.75d)
+            //{
+            //    Console.WriteLine("Высокий долговязый, смотри не ударься головой о дверной косяк.");
+            //}
+            //else if (pikkus > 2.00d)
+            //{
+            //    Console.WriteLine("Полный инопланетянин, как там выглядят облака?");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Рост не распознан");
+            //}
+
+            ////3 калькулятор с if и elseif
+            //Console.WriteLine("Привет. Введи первое число");
+            //int arv1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Привет. Введи второе число");
+            //int arv2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введи знак операции: / * + -");
+            //string tehtetyyp = Console.ReadLine();
+
+            //int tulemus = 0;
+            //if (tehtetyyp == "+")
+            //{
+            //    tulemus = arv1 + arv2;
+            //}
+            //else if (tehtetyyp == "-")
+            //{
+            //    tulemus = arv1 - arv2;
+            //}
+            //else if (tehtetyyp == "/")
+            //{
+            //    tulemus = arv1 / arv2;
+            //}
+            //else if (tehtetyyp == "*")
+            //{
+            //    tulemus = arv1 * arv2;
+            //}
+            //else if (tehtetyyp == "*")
+            //{
+            //    tulemus = (int)Math.Pow(arv1, arv2);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Пожалуйста, введи операцию, которую калькулятор понимает");
+            //}
+
+            //if (tulemus != 0)
+            //{
+            //    Console.WriteLine(tulemus);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Результат равен 0, либо ты попытался выполнить операцию, которую калькулятор не знает");
+            //}
+
+            ////4 пароль, if и тип данных string
+            //Console.WriteLine("Для продолжения работы программы, пожалуйста, введи пароль:");
+            //string password = Console.ReadLine();
+
+            //if (password == "simsalabim")
+            //{
+            //    Console.WriteLine("Пароль правильный, сундук с сокровищами открывается");
+            //}
+            //else if (password == "saatana" || password == "1234")
+            //{
+            //    Console.WriteLine("Пароль неподходящий, пожалуйста, введи другой");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Пароль неверный, попробуй снова");
+            //}
+
+            ////5 определение цвета
+            //Console.WriteLine("Какой цвет тебе нравится больше всего?:");
+            //string favouriteColour = Console.ReadLine();
+            //if (favouriteColour == "punane")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Red;
+            //}
+            //if (favouriteColour == "oranz")
+            //{
+            //    Console.WriteLine("К сожалению, оранжевого нет");
+            //}
+            //if (favouriteColour == "kollane")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Yellow;
+            //}
+            //if (favouriteColour == "roheline")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Green;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Цвет не распознан");
+            //}
+            //Console.WriteLine("Цвет изменён!");
+
+            ////    |
+            ////   \v/ САМОСТОЯТЕЛЬНАЯ РАБОТА НАЧИНАЕТСЯ ЗДЕСЬ
+
+            ////# Калькулятор переезда — напиши программу, которая:
+            ////#    - Спрашивает у пользователя, хочет ли он измерить картонную коробку или бочку
+            //Console.WriteLine("Ты хочешь измерить коробку или бочку?");
+            //string sisend = Console.ReadLine();
+
+            ////#    - в зависимости от ввода пользователя спрашивает:
+
+            ////#    - - для бочки:
+            //if (sisend == "tünn")
+            //{
+            ////#    - - - знает ли пользователь радиус основания (r) или диаметр (d):
+            //    Console.WriteLine("Ты знаешь радиус R или диаметр D бочки");
+            //    string rvõid = Console.ReadLine();
+            //    Console.WriteLine("Каков этот радиус/диаметр? в метрах");
+            //    double kasutajamõõt = double.Parse(Console.ReadLine());
+
+            ////#    - - - высоту бочки
+            //    Console.WriteLine("Какова высота твоей бочки? в метрах");
+            //    double kõrgus = double.Parse(Console.ReadLine());
+
+            ////#    - - - толщину крышки, так как крышка занимает часть объёма
+            //    Console.WriteLine("Какова толщина крышки бочки? в метрах");
+            //    double kaanepaksus = double.Parse(Console.ReadLine());
+
+            ////#    - - - вычисляет объём бочки, боковую площадь, общую площадь
+            //    double Sp = 0;
+            //    if (rvõid == "R")
+            //    {
+            //        Sp = Math.PI * (kasutajamõõt * kasutajamõõt);
+            //    }
+            //    else if (rvõid == "D")
+            //    {
+            //        kasutajamõõt = kasutajamõõt / 2;
+            //        Sp = Math.PI * (kasutajamõõt * kasutajamõõt);
+            //    }
+
+            //    double V = 0;
+            //    kõrgus = kõrgus - kaanepaksus;
+            //    V = Sp * kõrgus;
+
+            //    //Объём бочки найден. Теперь вычислим боковую площадь
+            //    kõrgus += kaanepaksus;
+            //    double Sk = 2 * Math.PI * kasutajamõõt * kõrgus;
+
+            //    //Боковая площадь найдена. Теперь вычислим общую площадь
+            //    double S = Sp + Sk;
+            //    Console.WriteLine($"Твоя бочка вмещает {V}\nБоковая площадь бочки {Sk}\nОбщая площадь бочки {S}");
+            //}
+
+            ////#    - - для коробки:
+            //else if (sisend == "kast")
+            //{
+            ////#    - - - Является ли коробка кубом или прямоугольным параллелепипедом
+            ////#    - - - - если куб, спрашивает только длину стороны
+            ////#    - - - - если прямоугольный параллелепипед, спрашивает:
+            ////#    - - - - - длину самой длинной стороны
+            ////#    - - - - - длину самой короткой стороны
+            ////#    - - - - - высоту коробки
+            ////#    - - вычисляет общую площадь, объём и диагональ (d)
+            //}
+
+            Console.WriteLine("hapukapsas");
+
+            // "Console"    -> это модуль C#, который мы адресуем, Console помогает выполнять действия в командной строке
+            // .            -> показывает, что мы обращаемся к функции или методу внутри модуля
+            // "WriteLine"  -> функция, которую мы используем
+            // ()           -> скобки, содержащие данные, необходимые для работы функции
+            // []           -> обозначает массивы
+            // {}           -> блок кода, обычно после if, else if, namespace или объявления функции
+            // "hapukapsas" -> параметр, передаваемый функции WriteLine для обработки
+            // Отступ       -> помогает разработчику понять, внутри какого блока находится код, и нужен также компилятору
+            // ;            -> каждая инструкция кода заканчивается точкой с запятой
+            // //           -> обозначает однострочный комментарий
+            // /**/         -> обозначает многострочный комментарий или регион комментариев
+
+            int muutuja = 3;
+
+            /* Возможные типы данных, которые могут понадобиться: */
+            int a = 1; // int — целое число
+            decimal b = 2.1M; // decimal — десятичное число
+            float c = 3.9f; // float — 32-битное число с плавающей точкой
+            double d = 5.6d; // double — 64-битное число с плавающей точкой
+            char c1 = 'a'; // один символ
+            string s = "tekst"; // строка
+            var x = "abc"; // неявно типизированная переменная
+            var y = 123;
+            const int z = 9; // константа, значение нельзя изменить
+
+            /* Возможные составные типы данных */
+
+            // 1. массив
+            int[] arvuMassiiv = new int[3];
+
+            int[] arvuMassiiv2 = [1, 2, 3];
+
+            int hasThisMany = arvuMassiiv.Length;
+
+            // 2. список
+            List<int> arvuNimekiri = new List<int>();
+
+            List<int> arvuNimekiri2 = new List<int>() { 1, 2, 3 };
+
+            List<int> arvuNimekiri3 = new List<int>(3);
+
+            int aa = 9001;
+
+            arvuNimekiri.Add(99);
+            arvuNimekiri.Add(aa);
+
+            int loendiPikkus = arvuNimekiri3.Count();
+
+            bool KasSeeArvOn = arvuNimekiri3.Contains(3);
+
+            arvuNimekiri3.Remove(4);
+
+            // основные математические операции
+            int liitmine = 1 + 1;
+            int lahutamine = 1 - 1;
+            double korrutamine = 1 * 2;
+            double jagamine = 1 / 2;
+
+            // математические операции из модуля Math
+            double astendamine = Math.Pow(2, 2);
+            double juurimine = Math.Sqrt(2);
+            double newD = 4.0000001d;
+
+            Math.Round(newD);
+        }
+    }
+}
+using System.Diagnostics.SymbolStore;
+using System.Runtime.Serialization;
+
+namespace MinuKonspekt
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ////Console.WriteLine("Hello, World!");
+
+            //// Переменные, математические операции, IF, ELSE IF и ELSE:
+
+            ////1. Определение содержимого при сравнении с пустой строкой, тип данных string
+            //Console.WriteLine("Привет пользователь, как тебя зовут");
+            //string nimi = Console.ReadLine();
+
+            //if (nimi == "")
+            //{
+            //    Console.WriteLine("Пользователь не ввёл своё имя");
+            //}
+            //else if (nimi != "")
+            //{
+            //    Console.WriteLine("Привет " + nimi + "!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Пользователь не ввёл своё имя");
+            //}
+
+            ////2. Определение диапазона чисел, сравнение с граничными значениями, тип данных int/double/float
+            //Console.WriteLine(nimi + ", сколько тебе лет?: ");
+            //int kasutajavanus = int.Parse(Console.ReadLine());
+
+            ////2.1 Несколько условий с помощью вложенных if
+            ////if (kasutajavanus > 0)
+            ////{
+            ////    if (kasutajavanus < 18)
+            ////    {
+            ////        Console.WriteLine("К сожалению, энергетик тебе не продадут, ты без Monster 😔");
+            ////    }
+            ////    else
+            ////    {
+            ////        Console.WriteLine("Ты можешь купить Monster, УРА ✨✨");
+            ////    }
+            ////}
+
+            ////2.2 Несколько условий в одном if, используя логическую операцию «and», избегая вложенности
+            //if (kasutajavanus > 0 && kasutajavanus < 18)
+            //{
+            //    Console.WriteLine("К сожалению, энергетик тебе не продадут, ты без Monster 😔");
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("Ты можешь купить Monster, УРА ✨✨");
+            //}
+
+            ////2.3 Несколько диапазонов с помощью if-elseif, double/float
+            //Console.WriteLine("Введи также свой рост, пожалуйста, " + nimi + ":");
+            //double pikkus = double.Parse(Console.ReadLine());
+
+            //if (pikkus < 1.00d)
+            //{
+            //    Console.WriteLine("Ты совсем маленький");
+            //}
+            //else if (pikkus < 1.25d && pikkus > 1.00d)
+            //{
+            //    Console.WriteLine("Ты почти метр");
+            //}
+            //else if (pikkus < 1.50d && pikkus > 1.25d)
+            //{
+            //    Console.WriteLine("Ой-ой, ты уже не гном, " + nimi + "!");
+            //}
+            //else if (pikkus < 1.75d && pikkus > 1.5d)
+            //{
+            //    Console.WriteLine("В основном стандартный рост, если не немного короткий");
+            //}
+            //else if (pikkus < 2.00d && pikkus > 1.75d)
+            //{
+            //    Console.WriteLine("Высокий человек, смотри не ударься головой о дверной косяк.");
+            //}
+            //else if (pikkus > 2.00d)
+            //{
+            //    Console.WriteLine("Полный инопланетянин, как там облака выглядят?");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Рост неизвестен");
+            //}
+
+            ////3. Калькулятор с if и else if
+            //Console.WriteLine("Привет. Введи первое число");
+            //int arv1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Привет. Введи второе число");
+            //int arv2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введи знак операции: / * + -");
+            //string tehtetyyp = Console.ReadLine();
+
+            //int tulemus = 0;
+
+            //if (tehtetyyp == "+")
+            //{
+            //    tulemus = arv1 + arv2;
+            //}
+            //else if (tehtetyyp == "-")
+            //{
+            //    tulemus = arv1 - arv2;
+            //}
+            //else if (tehtetyyp == "/")
+            //{
+            //    tulemus = arv1 / arv2;
+            //}
+            //else if (tehtetyyp == "*")
+            //{
+            //    tulemus = arv1 * arv2;
+            //}
+            //else if (tehtetyyp == "^")
+            //{
+            //    tulemus = (int)Math.Pow(arv1, arv2);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Пожалуйста, введи операцию, которую калькулятор понимает");
+            //}
+
+            //if (tulemus != 0)
+            //{
+            //    Console.WriteLine(tulemus);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Результат равен 0 или ты попытался выполнить неизвестную операцию");
+            //}
+
+            ////4. Пароль, if и тип данных string
+            //Console.WriteLine("Для продолжения работы программы, пожалуйста, введи пароль:");
+            //string password = Console.ReadLine();
+
+            //if (password == "simsalabim")
+            //{
+            //    Console.WriteLine("Пароль верный, сундук с сокровищами открывается");
+            //}
+            //else if (password == "saatana" || password == "1234")
+            //{
+            //    Console.WriteLine("Пароль неподходящий, пожалуйста, другой");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Пароль неверный, попробуй снова");
+            //}
+
+            ////5. Определение цвета
+            //Console.WriteLine("Какой цвет тебе больше всего нравится?:");
+            //string favouriteColour = Console.ReadLine();
+
+            //if (favouriteColour == "punane")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Red;
+            //}
+            //if (favouriteColour == "oranz")
+            //{
+            //    Console.WriteLine("К сожалению, оранжевого нет");
+            //}
+            //if (favouriteColour == "kollane")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Yellow;
+            //}
+            //if (favouriteColour == "roheline")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Green;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Цвет неизвестен");
+            //}
+            //Console.WriteLine("Цвет изменён!");
+
+            ////    |
+            ////   \v/ САМОСТОЯТЕЛЬНАЯ РАБОТА НАЧИНАЕТСЯ ЗДЕСЬ
+
+            ////# Калькулятор для переезда — написать программу, которая:
+            ////#    - Спрашивает у пользователя, хочет ли он измерить коробку или бочку
+            //Console.WriteLine("Ты хочешь измерить коробку или бочку?");
+            //string sisend = Console.ReadLine();
+
+            ////#    - В зависимости от выбора пользователя спрашивает:
+
+            ////#    - - для бочки:
+            //if (sisend == "tünn")
+            //{
+            ////#    - - - знает ли пользователь радиус основания (r) или диаметр (d):
+            //    Console.WriteLine("Ты знаешь радиус R или диаметр D бочки?");
+            //    string rvõid = Console.ReadLine();
+
+            //    Console.WriteLine("Каков этот радиус/диаметр? в метрах");
+            //    double kasutajamõõt = double.Parse(Console.ReadLine());
+
+            ////#    - - - высоту бочки
+            //    Console.WriteLine("Какой высоты твоя бочка? в метрах");
+            //    double kõrgus = double.Parse(Console.ReadLine());
+
+            ////#    - - - толщину крышки, так как крышка занимает часть внутреннего объёма
+            //    Console.WriteLine("Какой толщины крышка бочки? в метрах");
+            //    double kaanepaksus = double.Parse(Console.ReadLine());
+
+            ////#    - - - вычисляет объём бочки, боковую площадь и общую площадь поверхности
+            //    double Sp = 0;
+
+            //    if (rvõid == "R")
+            //    {
+            //        Sp = Math.PI * (kasutajamõõt * kasutajamõõt);
+            //    }
+            //    else if (rvõid == "D")
+            //    {
+            //        kasutajamõõt = kasutajamõõt / 2;
+            //        Sp = Math.PI * (kasutajamõõt * kasutajamõõt);
+            //    }
+
+            //    double V = 0;
+            //    kõrgus = kõrgus - kaanepaksus;
+            //    V = Sp * kõrgus;
+
+            //    // Объём бочки найден, вычисляем боковую поверхность
+            //    kõrgus += kaanepaksus;
+            //    double Sk = 2 * Math.PI * kasutajamõõt * kõrgus;
+
+            //    // Боковая поверхность найдена, вычисляем общую поверхность
+            //    double S = Sp + Sk;
+
+            //    Console.WriteLine($"Твоя бочка вмещает {V}\nБоковая поверхность: {Sk}\nОбщая поверхность: {S}");
+            //}
+
+            ////#    - - для коробки:
+            //else if (sisend == "kast")
+            //{
+            ////#    - - - является ли коробка кубом или прямоугольным параллелепипедом
+            ////#    - - - - если куб, спрашивает длину ребра
+            ////#    - - - - если параллелепипед, спрашивает:
+            ////#    - - - - - длину самой длинной стороны
+            ////#    - - - - - длину самой короткой стороны
+            ////#    - - - - - высоту коробки
+            ////#    - - вычисляет общую площадь, объём и длину диагонали
+            //}
+
+            Console.WriteLine("hapukapsas");
+
+            // "Console"    -> модуль C#, который мы адресуем, Console помогает выполнять действия в командной строке
+            // .            -> показывает, что мы обращаемся к функции или методу внутри модуля
+            // "WriteLine"  -> функция, которую мы используем
+            // ()           -> скобки с информацией, необходимой для работы функции
+            // []           -> обозначают массивы
+            // {}           -> блок кода, обычно после (if, else if), namespace или описания функции
+            // "hapukapsas" -> параметр, передаваемый функции WriteLine
+            // отступ       -> помогает разработчику и компилятору понять структуру кода
+            // ;            -> каждая инструкция заканчивается точкой с запятой
+            // //           -> однострочный комментарий
+            // /**/         -> многострочный комментарий или регион комментариев
+
+            int muutuja = 3;
+
+            // int          -> описание типа данных переменной
+            // "muutuja"    -> имя переменной
+            // =            -> оператор присваивания
+            // 3            -> присваиваемое значение
+
+            /* Возможные типы данных */
+            int a = 1;                // целое число
+            decimal b = 2.1M;         // десятичное число с плавающей точкой
+            float c = 3.9f;           // 32-битное число с плавающей точкой
+            double d = 5.6d;          // 64-битное число с плавающей точкой
+            char c1 = 'a';            // один символ
+            string s = "текст";       // строка
+            var x = "abc";            // неявный тип
+            var y = 123;
+            const int z = 9;          // константа (нельзя изменить)
+            // void — тип данных, который нельзя использовать для переменных, только для методов
+
+            /* Возможные составные типы данных */
+
+            // 1. Массив:
+            // [] — массив может хранить несколько элементов одного типа
+            // массив имеет фиксированную длину
+            int[] arvuMassiiv = new int[3];
+
+            // Второй способ создания массива:
+            int[] arvuMassiiv2 = { 1, 2, 3 };
+
+            // Встроенные методы массива:
+            int hasThisMany = arvuMassiiv.Length;
+
+            // 2. Список (List):
+            // List<T> — динамический список
+            List<int> arvuNimekiri = new List<int>();
+
+            // Второй способ создания списка:
+            List<int> arvuNimekiri2 = new List<int>() { 1, 2, 3 };
+
+            // Третий способ:
+            List<int> arvuNimekiri3 = new List<int>(3);
+
+            int aa = 9001;
+
+            // Методы списка:
+            arvuNimekiri.Add(99);
+            arvuNimekiri.Add(aa);
+
+            int loendiPikkus = arvuNimekiri3.Count();
+            bool KasSeeArvOn = arvuNimekiri3.Contains(3);
+            arvuNimekiri3.Remove(4);
+
+            // Основные математические операции
+            int liitmine = 1 + 1;
+            int lahutamine = 1 - 1;
+            double korrutamine = 1 * 2;
+            double jagamine = 1 / 2;
+
+            // Математические операции из модуля Math
+            double astendamine = Math.Pow(2, 2);
+            double juurimine = Math.Sqrt(2);
+            double newD = 4.0000001d;
+
+            Math.Round(newD);
+        }
+    }
+}
+
+using System.Diagnostics.SymbolStore;
+using System.Runtime.Serialization;
+
+namespace MinuKonspekt
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ////Console.WriteLine("Hello, World!");
+
+
+            ////Muutujad, Matemaatilised tehted, IF, ELSE IF ja ELSE:
+
+            ////1. tuvasta sisu võrdluses tühja stringiga, string andmetüüp
+            //Console.WriteLine("Tere kasutaja, mis on sinu nimi");
+            //string nimi = Console.ReadLine();
+
+            //if (nimi == "")
+            //{
+            //    Console.WriteLine("Kasutaja ei sisestanud oma nime");
+            //}
+            //else if (nimi != "")
+            //{
+            //    Console.WriteLine("Tere " + nimi + "!");
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Kasutaja ei sisestanud oma nime");
+            //}
+
+            ////2.tuvasta arvuvahemik, võrdluses piirväärtustega, int/double/float andmetüüp
+            //Console.WriteLine(nimi + ", mis on sinu vanus?: ");
+            //int kasutajavanus = int.Parse(Console.ReadLine());
+
+            ////2.1 mitu tingimust pesastatud if-ide abil
+            ////if (kasutajavanus > 0)
+            ////{
+            ////    if (kasutajavanus < 18)
+            ////    {
+            ////        Console.WriteLine("Kahjuks energiajooki sulle ei müüda, oled Monsterist ilma 😔");
+            ////    }
+            ////    else
+            ////    {
+            ////        Console.WriteLine("Saad osta Monsterit, YIPPIE ✨✨");
+            ////    }
+            ////}
+
+            ////2.2 mitu tingimust ühe ifi sees kasutades loogilist tehet "and", vältides pesastamist
+            //if (kasutajavanus > 0 && kasutajavanus < 18)
+            //{
+            //    Console.WriteLine("Kahjuks energiajooki sulle ei müüda, oled Monsterist ilma 😔");
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("Saad osta Monsterit, YIPPIE ✨✨");
+            //}
+            ////2.3 mitu vahemikku, if-elseif abil, double/float
+            //Console.WriteLine("Sisesta oma pikkus ka, palun, "+nimi+":");
+            //double pikkus = double.Parse(Console.ReadLine());
+            //if (pikkus < 1.00d)
+            //{
+            //    Console.WriteLine("Oled juntsu");
+            //}
+            //else if (pikkus <1.25d && pikkus > 1.00d)
+            //{
+            //    Console.WriteLine("Oled peaaegu allameetrimees");
+            //}
+            //else if (pikkus <1.50d && pikkus >1.25d)
+            //{
+            //    Console.WriteLine("Oioi, päkapikk enam ei olegi "+nimi+" !");
+            //}
+            //else if (pikkus <1.75d && pikkus >1.5d)
+            //{
+            //    Console.WriteLine("Oled enamasti standardpikkuses, kui mitte just natuke lühike");
+            //}
+            //else if (pikkus <2.00d && pikkus >1.75d)
+            //{
+            //    Console.WriteLine("Pikk kolge, vaata et sa pead vastu uksepiita ära ei löö.");
+            //}
+            //else if (pikkus > 2.00d)
+            //{
+            //    Console.WriteLine("Täielik tulnukas, kuidas pilved välja näevad?");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("pikkust ei tunta");
+            //}
+
+            ////3 kalkulaator ifi ja elsifidega
+            //Console.WriteLine("Tere. Sisesta esimene arv");
+            //int arv1 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Tere. Sisesta teine arv");
+            //int arv2 = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Sisesta tehtemärk: / * + -");
+            //string tehtetyyp = Console.ReadLine();
+
+            //int tulemus = 0;
+            //if (tehtetyyp == "+")
+            //{
+            //    tulemus = arv1 + arv2;
+            //}
+            //else if (tehtetyyp == "-")
+            //{
+            //    tulemus = arv1 - arv2;
+            //}
+            //else if (tehtetyyp == "/")
+            //{
+            //    tulemus = arv1 / arv2;
+            //}
+            //else if (tehtetyyp == "*")
+            //{
+            //    tulemus = arv1 * arv2;
+            //}
+            //else if (tehtetyyp == "*")
+            //{
+            //    tulemus = (int)Math.Pow(arv1, arv2);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Palun sisesta tehe, mida kalkulaator tuvastada oskab");
+            //}
+
+            //if (tulemus != 0)
+            //{
+            //    Console.WriteLine(tulemus);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Tulemus on 0, või üritasid teha tehet, mida kalkulaator ei tunne");
+            //}
+
+            ////4 parool, if ja string andmetüüp
+            //Console.WriteLine("Programmi edasiseks tööks sisesta palun parool:");
+            //string password = Console.ReadLine();
+
+            //if (password == "simsalabim")
+            //{
+            //    Console.WriteLine("Parool on õige, aarete laegas avaneb");
+            //}
+            //else if (password == "saatana" || password == "1234")
+            //{
+            //    Console.WriteLine("Parool on sobimatu, palun mingi muu");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Parool on vale, proovi uuesti");
+            //}
+
+            ////5 värvituvastus
+            //Console.WriteLine("Milline värv sulle kõige rohkem meeldib?:");
+            //string favouriteColour = Console.ReadLine();
+            //if(favouriteColour == "punane")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Red;
+            //}
+            //if (favouriteColour == "oranz")
+            //{
+            //    Console.WriteLine("Kahjuks oranzi ei ole");
+            //}
+            //if(favouriteColour == "kollane")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Yellow;
+            //}
+            //if (favouriteColour == "roheline")
+            //{
+            //    Console.BackgroundColor = ConsoleColor.Green;
+            //}
+            //else 
+            //{
+            //    Console.WriteLine("Värvi ei tunne");
+            //}
+            //Console.WriteLine("Värv muudetud!");
+
+            ////    |
+            ////   \v/ ISESEISEV TÖÖ LÄHEB SIIA
+
+            ////# Kolija kalkulaator - Kirjuta programm mis:
+            ////#    - Küsib kasutajalt kas ta tahab ära mõõta pappkasti või õlitünni.
+            //Console.WriteLine("Kas sa tahad mõõta kasti või tünni?");
+            //string sisend = Console.ReadLine();
+            ////#    - olenevalt kasutaja sisestusest küsib ta:
+
+            ////#    - - tünni jaoks:
+            //if (sisend == "tünn")
+            //{
+            ////#    - - - kas kasutaja teab põhja raadiust (r) või põhja läbimõõtu (d):
+            //    Console.WriteLine("Kas sa tead tünni raadiust R või läbimõõtu D");
+            //    string rvõid = Console.ReadLine();
+            //    Console.WriteLine("Mis on selle raadius/läbimõõt? meetrites");
+            //    double kasutajamõõt = double.Parse(Console.ReadLine());
+            ////#    - - - tünni kõrgust
+            //    Console.WriteLine("Kui kõrge on su tünn? meetrites");
+            //    double kõrgus = double.Parse(Console.ReadLine());
+            ////#    - - - kaane paksus, kuna kaan võtab tünni sisust natuke ruumi)
+            //    Console.WriteLine("Kui paks on su tünni kaas? meetrites");
+            //    double kaanepaksus = double.Parse(Console.ReadLine());
+            //    //#    - - - Arvutab tünni ruumala mahu, tünni küljepindala, tünni kogupindala
+            //    double Sp = 0;
+            //    if (rvõid == "R")
+            //    {
+            //        Sp = Math.PI * (kasutajamõõt * kasutajamõõt);
+            //    }
+            //    else if (rvõid == "D")
+            //    {
+            //        kasutajamõõt = kasutajamõõt / 2;
+            //        Sp = Math.PI * (kasutajamõõt * kasutajamõõt);
+            //    }
+            //    double V = 0;
+            //    kõrgus = kõrgus - kaanepaksus;
+            //    V = Sp * kõrgus;
+            //    //Tünni ruumala on olemas. arvutame küljepindala
+            //    kõrgus += kaanepaksus;
+            //    double Sk = 2 * Math.PI * kasutajamõõt * kõrgus;
+            //    //Tünni küljepindala on olemas. arvutame tünni kogupindala
+            //    double S = Sp + Sk;
+            //    Console.WriteLine($"Sinu tünn mahutab {V}\nTünni küljepindala on{Sk}\nTünni kogupindala on{S}");
+            //}
+
+            ////#    - - kasti jaoks:
+            //else if (sisend == "kast")
+            //{
+            ////#    - - - Kas kast on kuubiku kujuline või risttahuka kujuline
+            ////#    - - - - kui on kuubik, siis küsib kasutajalt ainult küljepikkust
+            ////#    - - - - kui on risttahukas siis küsib kasutajalt:
+            ////#    - - - - - pikima külje pikkust, 
+            ////#    - - - - - lühima külje pikkust ja
+            ////#    - - - - - kasti kõrgust
+            ////#    - - arvutab vastavalt kasti kogupindala, mahu, ja pikima läbiva joone (d)
+            //}
+
+            Console.WriteLine(/*abc*/"hapukapsas");
+            // "Console"    -> on moodul C# mida me adresserime, Console aitab teha tegevusi käsureal
+            // .            -> näitab, et meil on vaja adresseerida mingisugust funktsiooni või meetodit
+            //                 mooduli "Console" seest.
+            // "WriteLine"  -> Funktsioon mida me parasjagu kasutame.
+            // ()           -> sulupaar mis omab funktsiooni tööks vajalikku infot
+            // []           -> tähistab massiive
+            // {}           -> koodiplokk, tavaliselt kas pärast (if, else if) tingimust, namespacei või
+            //                 funktsiooni kirjeldust
+            // "hapukapsas" -> parameeter mis antakse funktsioonile WriteLine töötlemiseks kaasa.
+            //          -> Taane aitab arendajal aru saada, kuskohas millise koodiploki sees kood
+            //             asub, see on vajalik ka kompilaatorile samal eesmärgil.
+            // ;            -> kõik koodilaused lõppevad komakooloniga, mis tähistavad lause lõppu
+            // //           -> tähistab üherealist kommentaari
+            // /**/         -> tähistab mitmerealist kommentaari või kommentaariregiooni
+
+            int muutuja = 3;
+            // int          -> on muutuja nime ees olev andmetüübi kirjeldus mis näitab ära, millist
+            //                 tüüpi andmed selle muutuja sees on.
+            // "muutuja"    -> on nimetus, ehk muutuja, mis hoiab endas mingeid andmed, inimloetava
+            //                 sõnaga, ja mille abil saab neid addresseerida koodi sees.
+            // =            -> üksik võrdusmärk omistab muutuja sisse vastava väärtuse mis asub
+            //                 teiselpool võrdusmärki.
+            // 3            -> muutujale omistatav väärtus.
+
+            /* Võimalikud andmetüübid mida vaja võib minna: */
+            int a = 1; // int on täisarv
+            decimal b = 2.1M; // decimal on kümnendsüsteemis olev komakohaga arv
+            float c = 3.9f; // float on 32-bitine komakohaga arv
+            double d = 5.6d; // double on 64-bitine komakohaga arv
+            char c1 = 'a'; // üksainus täht või tähemärk mis tähistatakse ülakomadga ''
+            string s = "tekst"; //tähtedest koosnev sõna või tekst, tähistatakse jutumärkidega ""
+            var x = "abc"; //var on ebamäärase andmetüübiga kohalik muutuja
+            var y = 123;   //ta võib omada endas teisi andmetüüpe
+            const int z = 9; // konstant-tüüpi muutujaid ei saa muuta, nende sisu on read-only
+            //void - on andmetüüp, mida muutuja tekitamisel kasutada ei saa. Kasutatakse ainult meetodite signatuurides väljendamaks et
+            //meetod ei tagasta midagi.
+
+            /* Võimalikud komposiitandmetüübid */
+            // 1. massiiv:
+            // [] - > Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid samat tüüpi lihtandmeid. Massiivi tähistatakse kantsulgudega.
+            //        Massive saab olla ükskõik millist lihtandmetüüpi massiive.
+            //        Massiivi tekitamisel tuleb ära öelda kui pikk või kui suur see massiiv on.
+            //        Massiiv ei pea olema koostatud ainult lihtandmetüüpidest, vaid massiive saab olla ka tehtud teistest komposiitandmetüüpidest
+            //        Sealhulgas massiiv ise.
+            // Esimene tekitusviis:
+            int[] arvuMassiiv = new int[3]; // andmetüüp int väljendab et tegu on täisarvutüüpi andmega ja kantsulud väljendavad et ühtlasi on
+                                            // tegu ka massiiviga. muutuja nimeks on "arvuMassiiv" ja võrdusmärgi abil on omistatud muutujasse
+                                            // uus tühi massiiv kasutades kaitstud sõna "new", millele järgneb selle massiivi andmetüübi ja
+                                            // pikkuse sätestus "int[3]". See täghendab et siin massiivis on 3 elementi, mis on täisarvud.
+                                            // Teine tekitusviis:
+            int[] arvuMassiiv2 = [1, 2, 3];   // teine massiivi tekitusviis kus järjendi pikkuse sätestamise asemel, pannakse elemendid kohe
+                                              // järjendit omava muutuja sisse, järjendi pikkust sätestama ei pea, kuna pikkuse tuletab kompilaator
+                                              // sinna sisse pandud elementide koguse järgi.
+
+            // -- massiivi sisemised meetodid:
+            int hasThisMany = arvuMassiiv.Length; // massiivi meetod "Length" mille me saame kasutusele võtta punkti abil, loendab kokku
+                                                  // mitu elementi, adresseeritav massiiv omab, omistatakse ainult järjendi pikkus, mitte
+                                                  // järjendi sees olevaid elemente.
+                                                  //2. Loend:
+                                                  // List<T> -> Loend on komposiitandmetüüp, mille sees saab olla mitmeid samat tüüpi liht ja komposiitandmeid. Loend-tüüpi andmeid tähistatakse
+                                                  //            täiendava andmetüübikirjeldusega "List" mille järel noolsulgudesse <> asetatakse mis tüüpi andmed seal loendis on.
+                                                  //            Loendi tekitamisel, erinevalt massiivist, ei pea ütlema kui pikk loend on. Loendisse saab dünaamiliselt elemente juurde lisada,
+                                                  //            ehk tema pikkus ei ole fikseeritud. Sarnaselt massiiviga saab temas hoida ka teisi loendeid.
+                                                  // Esimene tekitusviis:
+            List<int> arvuNimekiri = new List<int>(); //Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga. Listi noolsulgude <> vahel on loendis
+                                                      //olevate andmete andmetüüp. Antud juhul on andmetüübiks "int" mis tähistab täisarve. Muutuja enda
+                                                      //nimeks on "arvuNimekiri". Omistame sellesse muutujasse kaitstud sõna "new" abil uue tühja
+                                                      //täisarvuloendi sätestusega "List<int>()".
+                                                      // Teine tekitusviis:
+            List<int> arvuNimekiri2 = new List<int>() { 1, 2, 3 }; //Teine loendi tekitusviis. Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi
+                                                                   //noolsulgude vahel on loendis olevate elementide andmetüüp. Antud juhul on andmetüübiks "int"
+                                                                   //mis tähistab täisarve. Muutuja enda nimeks on "arvuNimekiri2". Omistame selle muutujasse 
+                                                                   //kaitstud sõna "new" abil uue täisarvuloendi, aga seekord, peale sätestust "List<int>()" saame
+                                                                   //instantsieerimise hetkel talle kaasa anda ka esimesi elemente. Antud juhul on need elemendid
+                                                                   //"1", "2" ja "3". Elemendid sisestatakse nimekirja loogeliste sulgude vahel. Enam ei ole tegu
+                                                                   //tühja nimekirjaga, vaid loendiga kus on kolm elementi juba sees.
+                                                                   // kolmas tekitusviis:
+            List<int> arvuNimekiri3 = new List<int>(3); //Kolmas loendi tekitusviis. Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi noolsulgude
+                                                        //vahel on loendis olevate elementide andmetüüp. Antud juhul on andmetüübiks "int" mis tähistab täisarve.
+                                                        //Muutuja enda nimeks on "arvuNimekiri3". Omistame sellesse muutujasse kaitstud sõna "new" abil uue
+                                                        //täisarvuloendi, aga tavaliste sulgude vahele paneme arvu "3". Sarnaselt massiiviga ütleb see, et
+                                                        //loend on 3 elemendi suurune. Loend ise ja tema elemendid on tühjad, aga seal on 3 elementi. Arv "3"
+                                                        //on parameeter mida Listi konstruktor pikkuse määramiseks kasutab. Nimekiri säilitab oma omaduse muuta
+                                                        //pikkust elementide lisamise-eemaldamisega, aga vajadusel saab nii anda talle pikkuse.
+            int aa = 9001;
+            // -- Loendi sisemised meetodid:
+            arvuNimekiri.Add(99); //Loendi meetod "Add()" lisab enne punkti olevale järjendile uue elemendi, element mida lisatakse on Add meetodi sulgude
+                                  //vahel. Elementi saab lisada otse (antud juhul täisarv "99")
+            arvuNimekiri.Add(aa); //või muutujana.
+            int loendiPikkus = arvuNimekiri3.Count(); //Loendi meetod "Count()" loeb kokku mitu elementi järjendis on, meetod tagastab täisarvu mis vastab
+                                                      //elementide kogusele.
+            bool KasSeeArvOn = arvuNimekiri3.Contains(3); //Loendi meetod "Contains()" otsib kogu järjendi seest elementi, mis vastab sulgude vahel olevale
+                                                          //parameetrile. Meetod tagastab kas "true" või "false" - on leitud või ei ole. Tegemist on
+                                                          //põhimõtteliselt foreach tsükliga, mis otsib kindlat vastet, töötades läbi kogu loendi.
+            arvuNimekiri3.Remove(4); //Loendi meetod "Remove()"eemaldab enne punkti olevast loendist, kindlal asukohal oleva elemendi. Sulgude vahel on parameetriks
+                                     //eemaldatava elemendi asukohajärjekorranumber.
+
+            //põhilised matemaatilised tehted
+            int liitmine = 1 + 1; //liitmine, kaks arvu liidetakse kokku
+            int lahutamine = 1 - 1; //lahutamine, kus esimesest arvust lahutatakse maha teine
+            double korrutamine = 1 * 2; //korrutamine, kus teine arv korrutatakse esimese arvu kordi.
+            double jagamine = 1 / 2; //jagamine. esimene arv jagatakse teise arvuga.
+
+            //Matemaatilised tehted moodulist "Math"
+            double astendamine = Math.Pow(2, 2); //astendamine, esimene arv astendatakse teisega
+            double juurimine = Math.Sqrt(2); //ruutjuur, parameetrina juuritav arv
+            double newD = 4.0000001d;
+            Math.Round(newD); //Moodulist "Math" kutsutakse esile punkti abil meetod "Round", sulgude vahel on esimese parameetrina 
+                              //ümardatav arv, teise parameetrina komakohtade arv. Round ümardab sulgude vahel oleva arvväärtuse
+                              //teises parameetris oleva komakohtaden
+
+
+**Общие термины**
+
+programm — программа
+programmeerimine — программирование
+programmeerimiskeel — язык программирования
+kood — код
+rea kood — строка кода
+käsk — команда
+viga — ошибка
+süntaks — синтаксис
+kompilaator — компилятор
+tõlge — компиляция / перевод кода
+käivitamine — запуск
+
+---
+
+**Переменные и типы данных**
+
+muutuja — переменная
+andmetüüp — тип данных
+täisarv — целое число
+reaalarv — дробное число
+tekst — текст
+sõne (string) — строка
+tõeväärtus — логическое значение
+tõene — true (истина)
+väär — false (ложь)
+bool — логический тип
+int — целое число
+double — дробное число
+char — символ
+
+---
+
+**Операторы**
+
+võrdus — присваивание
+võrdlus — сравнение
+liitmine — сложение
+lahutamine — вычитание
+korrutamine — умножение
+jagamine — деление
+suurem kui — больше чем
+väiksem kui — меньше чем
+võrdne — равно
+ei ole võrdne — не равно
+
+---
+
+**Условия**
+
+tingimus — условие
+kui — if
+muidu — else
+muidu kui — else if
+tingimuslause — условный оператор
+
+---
+
+**Циклы**
+
+tsükkel — цикл
+while-tsükkel — цикл while
+for-tsükkel — цикл for
+kordus — повторение
+loendur — счётчик
+lõputu tsükkel — бесконечный цикл
+
+---
+
+**Массивы и коллекции**
+
+massiiv — массив
+massiivi element — элемент массива
+indeks — индекс
+pikkus — длина
+List — список
+kollektsioon — коллекция
+
+---
+
+**Методы и функции**
+
+meetod — метод
+funktsioon — функция
+parameeter — параметр
+argument — аргумент
+tagastusväärtus — возвращаемое значение
+return — возврат значения
+void — без возврата значения
+
+---
+
+**Классы и ООП**
+
+klass — класс
+objekt — объект
+atribuut — атрибут
+väli — поле
+omadus — свойство
+konstruktor — конструктор
+pärimine — наследование
+liides — интерфейс
+kapseldamine — инкапсуляция
+
+
+**Ввод и вывод**
+
+sisend — ввод
+väljund — вывод
+konsool — консоль
+kasutaja sisend — ввод пользователя
+teksti väljastamine — вывод текста
+
+//Ошибки и отладка
+
+veateade — сообщение об ошибке
+erind — исключение
+try — попытка
+catch — перехват ошибки
+finally — выполняется в конце
+parandamine — исправление
+testimine — тестирование
+
+
+//Разное, но полезное
+
+projekt — проект
+fail — файл
+kaust — папка
+raamatukogu — библиотека
+viide — ссылка
+namespace — пространство имён
+kommentaar — комментарий
+üherealine kommentaar — однострочный комментарий
+mitmerealine kommentaar — многострочный комментарий
+
+
+
+1. Что такое C#
+
+C# (си шарп) — язык программирования от Microsoft.
+Чаще всего используется для:
+
+* программ под Windows
+* игр (Unity)
+* сайтов и серверов (ASP.NET)
+
+Работает на платформе .NET — она отвечает за выполнение программы, память и прочие технические штуки.
+
+---
+
+2. Самая простая программа
+
+using System;
+
+class Program
+{
+static void Main()
+{
+Console.WriteLine("Привет, мир!");
+}
+}
+
+Что тут происходит по-человечески:
+using System — подключаем стандартную библиотеку
+Main — это точка старта, программа всегда начинается отсюда
+Console.WriteLine — вывод текста в консоль
+
+---
+
+3. Переменные
+
+int age = 16;
+string name = "Alex";
+bool isStudent = true;
+double height = 1.75;
+
+Важно:
+
+* тип указывать обязательно
+* int — целые числа
+* double — дробные
+* string — текст
+* bool — true или false
+
+Можно писать короче:
+
+var x = 10;
+
+var — это не «любой тип», компилятор сам понимает, что x это int.
+
+---
+
+4. Ввод данных
+
+string input = Console.ReadLine();
+int number = int.Parse(input);
+
+Или сразу:
+
+int number = int.Parse(Console.ReadLine());
+
+Если ввести не число — программа сломается. Для начала это нормально.
+
+---
+
+5. Условия (if)
+
+if (age >= 18)
+{
+Console.WriteLine("Совершеннолетний");
+}
+else
+{
+Console.WriteLine("Несовершеннолетний");
+}
+
+Операторы сравнения:
+== равно
+!= не равно
+
+> больше
+> < меньше
+> = больше или равно
+> <= меньше или равно
+
+---
+
+6. Цикл while
+
+int i = 0;
+
+while (i < 5)
+{
+Console.WriteLine(i);
+i++;
+}
+
+Цикл выполняется, пока условие true.
+i++ — увеличивает i на 1.
+
+---
+
+7. Цикл for
+
+for (int i = 0; i < 5; i++)
+{
+Console.WriteLine(i);
+}
+
+Используется, когда заранее известно, сколько раз повторять.
+
+---
+
+8. Методы (функции)
+
+static void SayHello()
+{
+Console.WriteLine("Привет!");
+}
+
+static int Sum(int a, int b)
+{
+return a + b;
+}
+
+Методы нужны, чтобы не писать один и тот же код 100 раз.
+
+---
+
+9. Массивы
+
+int[] numbers = { 1, 2, 3, 4, 5 };
+
+Console.WriteLine(numbers[0]); // выведет 1
+
+Нумерация начинается с нуля, это важно.
+
+---
+
+10. Классы и объекты (очень кратко)
+
+class Person
+{
+public string Name;
+public int Age;
+}
+
+Person p = new Person();
+p.Name = "Alex";
+p.Age = 16;
+
+Класс — это шаблон.
+Объект — конкретный экземпляр.
+
+пользователя
+
+ET:
+👉 Programm küsib kasutajalt tema nime.
+RU: Программа спрашивает у пользователя его имя.
+
+ET:
+👉 Programm küsib kasutajalt vanust.
+RU: Программа спрашивает у пользователя возраст.
+
+ET:
+👉 Programm küsib kasutajalt ühe arvu.
+RU: Программа спрашивает у пользователя одно число.
+
+ET:
+👉 Programm loeb kasutaja sisendi konsoolist.
+RU: Программа считывает ввод пользователя из консоли.
+
+💬 Вывод текста
+
+ET:
+👉 Programm kuvab ekraanile tervituse.
+RU: Программа выводит на экран приветствие.
+
+ET:
+👉 Programm väljastab kasutaja nime.
+RU: Программа выводит имя пользователя.
+
+ET:
+👉 Programm väljastab vastuse konsooli.
+RU: Программа выводит ответ в консоль.
+
+✅ Условия (if / else)
+
+ET:
+👉 Kui kasutaja vastab „jah“, siis programm kuvab vastava teate.
+RU: Если пользователь отвечает «да», программа выводит соответствующее сообщение.
+
+ET:
+👉 Kui vastus on „jah“, siis…
+RU: Если ответ «да», то…
+
+ET:
+👉 Kui vastus ei ole „jah“, siis…
+RU: Если ответ не «да», то…
+
+ET:
+👉 Vastasel juhul programm kuvab teise teate.
+RU: В противном случае программа выводит другое сообщение.
+
+🔁 Логика / проверки
+
+ET:
+👉 Programm kontrollib kasutaja vastust.
+RU: Программа проверяет ответ пользователя.
+
+ET:
+👉 Kui sisestatud arv on suurem kui 0…
+RU: Если введённое число больше 0…
+
+ET:
+👉 Kui arv on paaris / paaritu…
+RU: Если число чётное / нечётное…
+
+🧠 Часто встречающиеся формулировки
+
+ET:
+👉 Koosta programm, mis…
+RU: Составь программу, которая…
+
+ET:
+👉 Kirjuta programm, mis küsib kasutajalt…
+RU: Напиши программу, которая спрашивает у пользователя…
+
+ET:
+👉 Kasuta tingimuslauset (if).
+RU: Используй условный оператор (if).
+
+ET:
+👉 Programm peab töötama korrektselt.
+RU: Программа должна работать корректно.
+
+Программа ждет ввод от пользователя 
+Programm ootab kasutaja sisendit. 
+
+Программа создает переменную стринг "strtest"/ переменную инт "intest"
+Programm loob stringmuutuja "strtest"/int muutuja "intest"
+
+Чекпоинт
+Checkpoint
+4ekpa
+
+Конечно 🙂 Давай по-простому и по шагам.
+
+## 1. Строение метода в C#
+
+Общий вид метода:
+
+```csharp
+[модификатор_доступа] [тип_возврата] ИмяМетода(параметры)
+{
+    // тело метода
+}
+```
+
+### Разберём по частям:
+
+1. **Модификатор доступа**
+   Чаще всего:
+
+   * `public` — метод доступен отовсюду
+   * `private` — только внутри класса
+
+2. **Тип возврата**
+   Что метод возвращает:
+
+   * `int` — число
+   * `string` — строку
+   * `bool` — true/false
+   * `void` — **ничего не возвращает**
+
+3. **Имя метода**
+   Любое понятное имя, обычно с большой буквы:
+
+   ```csharp
+   Sum
+   PrintMessage
+   GetAge
+   ```
+
+4. **Параметры**
+   Данные, которые передаются в метод (необязательно).
+
+5. **Тело метода**
+   Код, который выполняется при вызове метода.
+
+---
+
+## 2. Простой пример без параметров
+
+```csharp
+public static void SayHello()
+{
+    Console.WriteLine("Привет!");
+}
+```
+
+### Как это работает:
+
+* `void` → метод ничего не возвращает
+* Когда вызываем `SayHello()`, он просто печатает текст
+
+Вызов:
+
+```csharp
+SayHello();
+```
+
+---
+
+## 3. Метод с параметрами
+
+```csharp
+public static void Greet(string name)
+{
+    Console.WriteLine("Привет, " + name);
+}
+```
+
+Вызов:
+
+```csharp
+Greet("Алекс");
+```
+
+Результат:
+
+```
+Привет, Алекс
+```
+
+👉 Здесь `name` — параметр, который мы передаём в метод.
+
+---
+
+## 4. Метод, который возвращает значение
+
+```csharp
+public static int Sum(int a, int b)
+{
+    return a + b;
+}
+```
+
+Вызов:
+
+```csharp
+int result = Sum(3, 5);
+Console.WriteLine(result);
+```
+
+Результат:
+
+```
+8
+```
+
+### Важно:
+
+* `return` **возвращает значение** и завершает метод
+* Тип `int` должен совпадать с тем, что возвращаем
+
+---
+
+## 5. Мини-пример целиком (рабочая программа)
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        SayHello();
+        int sum = Sum(2, 4);
+        Console.WriteLine(sum);
+    }
+
+    static void SayHello()
+    {
+        Console.WriteLine("Привет!");
+    }
+
+    static int Sum(int a, int b)
+    {
+        return a + b;
+    }
+}
+```
+
+---
+
+
+---
+
+## 1. Что такое массив в C#
+
+**Массив** — это набор значений одного типа, хранящихся вместе.
+
+Пример массива чисел:
+
+```csharp
+int[] numbers = { 1, 2, 3, 4, 5 };
+```
+
+Пример массива строк:
+
+```csharp
+string[] names = { "Аня", "Борис", "Катя" };
+```
+
+👉 У каждого элемента есть **индекс** (номер), начинается с **0**
+
+```csharp
+numbers[0] // 1
+numbers[1] // 2
+```
+
+---
+
+## 2. Метод, который работает с массивом
+
+### Пример 1: вывести все элементы массива
+
+```csharp
+public static void PrintArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.WriteLine(array[i]);
+    }
+}
+```
+
+### Как это работает:
+
+* `int[] array` — метод принимает **массив чисел**
+* `array.Length` — количество элементов
+* `for` перебирает весь массив
+
+Вызов:
+
+```csharp
+int[] numbers = { 3, 7, 10 };
+PrintArray(numbers);
+```
+
+---
+
+## 3. Метод, который возвращает сумму массива
+
+```csharp
+public static int SumArray(int[] array)
+{
+    int sum = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        sum += array[i];
+    }
+
+    return sum;
+}
+```
+
+Вызов:
+
+```csharp
+int result = SumArray(numbers);
+Console.WriteLine(result);
+```
+
+---
+
+## 4. Метод с массивом строк
+
+```csharp
+public static void PrintNames(string[] names)
+{
+    foreach (string name in names)
+    {
+        Console.WriteLine(name);
+    }
+}
+```
+
+👉 `foreach` — удобен для массивов, не нужен индекс.
+
+---
+
+## 5. Теперь самое важное — что такое bool
+
+`bool` (булл) — это **логический тип данных**.
+Он может быть **только**:
+
+```csharp
+true   // правда, да
+false  // ложь, нет
+```
+
+Пример:
+
+```csharp
+bool isAlive = true;
+bool hasKey = false;
+```
+
+---
+
+## 6. Метод, который возвращает bool
+
+### Проверка: есть ли число в массиве
+
+```csharp
+public static bool ContainsNumber(int[] array, int number)
+{
+    foreach (int item in array)
+    {
+        if (item == number)
+        {
+            return true; // нашли число
+        }
+    }
+
+    return false; // не нашли
+}
+```
+
+Вызов:
+
+```csharp
+int[] numbers = { 1, 3, 5, 7 };
+
+bool found = ContainsNumber(numbers, 5);
+Console.WriteLine(found);
+```
+
+Результат:
+
+```
+True
+```
+
+---
+
+## 7. bool + if (очень важно!)
+
+```csharp
+bool hasKey = true;
+
+if (hasKey)
+{
+    Console.WriteLine("Дверь открыта");
+}
+else
+{
+    Console.WriteLine("Дверь закрыта");
+}
+```
+
+👉 `if` **проверяет bool**
+👉 `if (hasKey)` = `if (hasKey == true)`
+
+---
+
+## 8. Мини-пример всё вместе
+
+```csharp
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 2, 4, 6, 8 };
+
+        PrintArray(numbers);
+
+        bool hasSix = ContainsNumber(numbers, 6);
+
+        if (hasSix)
+        {
+            Console.WriteLine("Число найдено!");
+        }
+        else
+        {
+            Console.WriteLine("Числа нет");
+        }
+    }
+
+    static void PrintArray(int[] array)
+    {
+        foreach (int n in array)
+        {
+            Console.WriteLine(n);
+        }
+    }
+
+    static bool ContainsNumber(int[] array, int number)
+    {
+        foreach (int n in array)
+        {
+            if (n == number)
+                return true;
+        }
+
+        return false;
+    }
+}
+```
+
+---
+
+Коротко:
+**`=` — присваивает**,
+**`==` — сравнивает**.
+А теперь нормально и с примерами 👇
+
+---
+
+## 1. `=` — оператор **присваивания**
+
+Он **кладёт значение в переменную**.
+
+```csharp
+int a = 5;
+```
+
+Читается так:
+
+> в переменную `a` положить значение `5`
+
+Можно менять значение:
+
+```csharp
+a = 10;
+```
+
+❗ `=` **НЕ задаёт вопрос**, он просто делает действие.
+
+---
+
+## 2. `==` — оператор **сравнения**
+
+Он **сравнивает два значения** и возвращает `bool`
+(`true` или `false`).
+
+```csharp
+int a = 5;
+
+bool result = (a == 5); // true
+```
+
+Читается так:
+
+> равно ли `a` значению `5`?
+
+---
+
+## 3. Главная ошибка новичков ❌
+
+```csharp
+if (a = 5) // ОШИБКА
+```
+
+Почему:
+
+* `a = 5` — это присваивание
+* `if` ждёт `bool`
+* `int` ≠ `bool`
+
+✅ Правильно:
+
+```csharp
+if (a == 5)
+{
+    Console.WriteLine("a равно 5");
+}
+```
+
+---
+
+## 4. Наглядное сравнение
+
+| Оператор | Что делает           | Возвращает       |
+| -------- | -------------------- | ---------------- |
+| `=`      | присваивает значение | ничего           |
+| `==`     | сравнивает значения  | `true` / `false` |
+
+---
+
+## 5. Пример из жизни 🧠
+
+```csharp
+int password = 1234;
+
+// =  → положить бумажку в коробку
+// == → посмотреть, одинаковые ли бумажки
+
+if (password == 1234)
+{
+    Console.WriteLine("Доступ разрешён");
+}
+```
+
+---
+
+## 6. Пример с bool (чтобы закрепить)
+
+```csharp
+bool isAlive = true;
+
+if (isAlive == true)
+{
+    Console.WriteLine("Игрок жив");
+}
+```
+
+Можно короче:
+
+```csharp
+if (isAlive)
+{
+    Console.WriteLine("Игрок жив");
+}
+```
+
+---
+
+## 7. Короткое правило для запоминания
+
+> **Один знак `=` — положить**
+> **Два знака `==` — спросить**
+
+
+---
+
+## 1. Операторы сравнения `<`, `>`, `<=`, `>=`, `==`, `!=`
+
+### ❌ Ошибка в примере
+
+```csharp
+if (i <=\=< 3)
+```
+
+❗ **Так писать нельзя**. В C# **нет оператора `=<`** и тем более `<=<`.
+
+---
+
+## 2. Как ПРАВИЛЬНО
+
+### Меньше
+
+```csharp
+i < 3
+```
+
+`i` меньше 3
+
+### Больше
+
+```csharp
+i > 3
+```
+
+`i` больше 3
+
+### Меньше или равно
+
+```csharp
+i <= 3
+```
+
+`i` меньше **ИЛИ** равно 3
+
+### Больше или равно
+
+```csharp
+i >= 3
+```
+
+`i` больше **ИЛИ** равно 3
+
+### Равно
+
+```csharp
+i == 3
+```
+
+⚠️ **НЕ путать!**
+
+* `=` — присваивание
+* `==` — сравнение
+
+### Не равно
+
+```csharp
+i != 3
+```
+
+---
+
+## 3. Как проверить «между» числами (ВАЖНО!)
+
+❌ Так нельзя:
+
+```csharp
+if (1 <= i <= 3) // ОШИБКА
+```
+
+✅ Так **правильно**:
+
+```csharp
+if (i >= 1 && i <= 3)
+```
+
+### Как это читается:
+
+> если `i` больше или равно 1 **И** меньше или равно 3
+
+---
+
+## 4. Разница между `&&` и `||`
+
+### `&&` — ЛОГИЧЕСКОЕ И
+
+👉 **все условия должны быть true**
+
+```csharp
+if (age >= 18 && hasPassport)
+{
+    Console.WriteLine("Можно лететь");
+}
+```
+
+| age >= 18 | hasPassport | результат |
+| --------- | ----------- | --------- |
+| true      | true        | ✅ true    |
+| true      | false       | ❌ false   |
+| false     | true        | ❌ false   |
+
+---
+
+### `||` — ЛОГИЧЕСКОЕ ИЛИ
+
+👉 **достаточно одного true**
+
+```csharp
+if (isAdmin || isModerator)
+{
+    Console.WriteLine("Доступ разрешён");
+}
+```
+
+| isAdmin | isModerator | результат |
+| ------- | ----------- | --------- |
+| false   | false       | ❌ false   |
+| true    | false       | ✅ true    |
+| false   | true        | ✅ true    |
+
+---
+
+## 5. Оператор `!` (НЕ)
+
+```csharp
+bool isDead = false;
+
+if (!isDead)
+{
+    Console.WriteLine("Игрок жив");
+}
+```
+
+`!` переворачивает значение:
+
+* `!true` → `false`
+* `!false` → `true`
+
+---
+
+## 6. Разница между `int` и `double`
+
+### `int` — целые числа
+
+```csharp
+int a = 5;
+int b = 2;
+
+int result = a / b;
+Console.WriteLine(result); // 2
+```
+
+❗ Дробная часть **отбрасывается**
+
+---
+
+### `double` — дробные числа
+
+```csharp
+double a = 5;
+double b = 2;
+
+double result = a / b;
+Console.WriteLine(result); // 2.5
+```
+
+---
+
+## 7. ВАЖНОЕ сравнение int и double
+
+```csharp
+int x = 5;
+double y = 2;
+
+double result = x / y;
+Console.WriteLine(result); // 2.5
+```
+
+Но:
+
+```csharp
+int result = x / y; // ❌ ОШИБКА
+```
+
+Нельзя положить `double` в `int`.
+
+---
+
+## 8. Когда что использовать
+
+| Тип      | Когда использовать                    |
+| -------- | ------------------------------------- |
+| `int`    | количество, очки, жизни, индекс       |
+| `double` | деньги, деление, скорость, координаты |
+
+---
+
+## 9. Пример с `if`, `&&`, `||`, `int`, `double`
+
+```csharp
+int score = 85;
+double accuracy = 0.75;
+
+if (score >= 80 && accuracy >= 0.7)
+{
+    Console.WriteLine("Уровень пройден!");
+}
+```
+
+---
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
